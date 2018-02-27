@@ -2,11 +2,11 @@ import React from 'react';
 
 
 
-var ResultsListItem = () => (
+var ResultsListItem = (props) => (
   <div>
-    List Item 1
+    {props.movieName}
   </div>
-  );
+);
 
 
 

@@ -1,10 +1,14 @@
 import React from 'react';
+import ResultsListItem from './resultslistitem.jsx';
 
 
-
-var ResultsList = () => (
+var ResultsList = (props) => (
   <div>
-    List
+    {
+      props.listItems.map((item, i) => 
+        <ResultsListItem movieName={item} key={i}/>
+      )
+    }
   </div>
   );
 
