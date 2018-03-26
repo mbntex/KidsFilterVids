@@ -1,5 +1,19 @@
+
+
+
+
+
+#search-component {
+
+}
+
+
+#currentSearch {
+  size: 18;
+  margin-left: 100px;
+}
+
 .search-area {
-  background-color: lightgrey;
   padding: 10px;
   border: solid black 2px;
 }
@@ -7,11 +21,18 @@
 .video-area {
   background-color: white;
   border: solid black 2px;
+  padding-left: 100px;
 }
 
 .list-area {
-  background-color: lightblue;
+  background-color: blue;
+  border: solid black 10px;
+  overflow-y: scroll;
+}
+
+.designated-area {
   border: solid black 2px;
+  overflow-y: scroll;
 }
 
 .centerbox {
@@ -22,7 +43,7 @@
   background-color: #4CAF50; /* Green */
     border: 2px solid white;
     color: white;
-    padding: 15px 100px;
+
     margin: 0px 0px 0px 0px;
     text-align: center;
     text-decoration: none;
@@ -36,7 +57,7 @@
     background-color: white; /* Green */
     border: 2px solid green;
     color: green;
-    padding: 15px 100px;
+    /*padding: 15px 100px;*/
     margin: 0px 0px 0px 0px;
     text-align: center;
     text-decoration: none;
@@ -45,7 +66,90 @@
 }
 
 
+#controlaccessbutton {
+  background-color: #4CAF50; /* Green */
+    border: 2px solid white;
+    color: white;
+    /*padding: 15px 100px;*/
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
 
+#controlaccessbutton:hover {
+    background-color: white; /* Green */
+    border: 2px solid green;
+    color: green;
+    /*padding: 15px 100px;*/
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0,0,0, 0.5);
+  z-index: 2;
+  border-radius: 5px;
+
+}
+
+.popup_inner {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  margin: auto;
+  background: white;
+  border-radius: 5px;
+  /*overflow: scroll;*/
+}
+
+.popup_list_scrolls {
+  /*background: red;*/
+  overflow: scroll;
+  height: 65%;
+}
+
+.popup_label{
+  display:inline-block;
+  padding-left: 10px;
+  width:80px;
+}
+
+.popup_label_tips_exception {
+  display:inline-block;
+  padding-left: 10px;
+  width:120px;
+}
+
+
+.scrolling{
+  overflow-y: auto;
+}
 
 
 

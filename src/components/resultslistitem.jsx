@@ -3,8 +3,13 @@ import React from 'react';
 
 
 var ResultsListItem = (props) => (
-  <div>
-    {props.movieName}
+  <div onClick={()=>props.videoChangeFn(props)}>
+    <div>
+      <img src={props.image}/>
+    </div>
+    <div>
+      {props.movieName}
+    </div>
   </div>
 );
 
@@ -12,3 +17,7 @@ var ResultsListItem = (props) => (
 
 
 export default ResultsListItem;
+
+
+
+
