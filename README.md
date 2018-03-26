@@ -13,7 +13,7 @@ Start the development server with this command:
 ```
 npm start
 *** node server.js
-
+*** add html part? / alternate?
 ```
  
  

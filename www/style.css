@@ -1,155 +1,79 @@
-
-
-
-
-
-#search-component {
-
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  
 }
 
-
-#currentSearch {
-  size: 18;
-  margin-left: 100px;
+.flex-container-spaced {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  
 }
 
-.search-area {
-  padding: 10px;
-  border: solid black 2px;
+.flex-container-vertical {
+  display: flex;
+  flex-direction: column;
+  
 }
 
-.video-area {
-  background-color: white;
-  border: solid black 2px;
-  padding-left: 100px;
+/*OVERALL APP ELEMENT CONTAIERS*/
+.all-video--general-container {
+  border: 3px solid black;
 }
 
-.list-area {
-  background-color: blue;
-  border: solid black 10px;
-  overflow-y: scroll;
+/*SEARCH BAR*/
+.search-bar-container {
+  margin: 10px;
 }
 
-.designated-area {
-  border: solid black 2px;
-  overflow-y: scroll;
+/*CURRENT VIDEO*/
+.You-Tube-display {
+  border: 3px solid black;
+  padding: 20px;
+  /*max-width: 75%;*/
 }
 
-.centerbox {
-  justify-content: center;
+.You-Tube-display--title-text {
+  font-size: 1.25em;
+  color: blue;
 }
 
-#searchbutton{
-  background-color: #4CAF50; /* Green */
-    border: 2px solid white;
-    color: white;
-
-    margin: 0px 0px 0px 0px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-
-#searchbutton:hover {
-    background-color: white; /* Green */
-    border: 2px solid green;
-    color: green;
-    /*padding: 15px 100px;*/
-    margin: 0px 0px 0px 0px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
-
-#controlaccessbutton {
-  background-color: #4CAF50; /* Green */
-    border: 2px solid white;
-    color: white;
-    /*padding: 15px 100px;*/
-    margin: 10px 10px 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-
-#controlaccessbutton:hover {
-    background-color: white; /* Green */
-    border: 2px solid green;
-    color: green;
-    /*padding: 15px 100px;*/
-    margin: 10px 10px 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
-
-
-
-
-
-
-
-
-
-.popup {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  background-color: rgba(0,0,0, 0.5);
-  z-index: 2;
-  border-radius: 5px;
-
-}
-
-.popup_inner {
-  position: absolute;
-  left: 25%;
-  right: 25%;
-  top: 25%;
-  bottom: 25%;
-  margin: auto;
-  background: white;
-  border-radius: 5px;
-  /*overflow: scroll;*/
-}
-
-.popup_list_scrolls {
-  /*background: red;*/
-  overflow: scroll;
-  height: 65%;
-}
-
-.popup_label{
-  display:inline-block;
-  padding-left: 10px;
-  width:80px;
-}
-
-.popup_label_tips_exception {
-  display:inline-block;
-  padding-left: 10px;
-  width:120px;
-}
-
-
-.scrolling{
+/*VIDEO LIST AND ITEMS*/
+.listed-videos {
+  width: 500px;
+  height: 80%;
   overflow-y: auto;
 }
+
+
+.listed-videos__item {
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.listed-videos__item--images {
+  height: '90px',
+  width: '120px',
+}
+
+.listed-videos__item--title {
+  color: blue;
+  padding: 5px;
+}
+
+.listed-videos__item--content-wrapper {
+  margin: 10px;
+}
+
+.listed-videos__item--content-wrapper > p {
+  padding: 10px;
+}
+
+
+
+
+
 
 
 
