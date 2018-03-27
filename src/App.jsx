@@ -4,7 +4,10 @@ import SearchBar from './components/SearchBar.jsx';
 import SearchOptions from './components/SearchOptions.jsx';
 import UserLogin from './components/UserLogin.jsx';
 import VideoList from './components/VideoList.jsx';
+import Timer from './components/Timer.jsx';
 import DefaultSearchData from './components/DefaultSearchData.js';
+import AllowedSearches from './components/AllowedSearches.js';
+import VerificationQuestions from './components/VerificationQuestions.js';
 import axios from 'axios';
 import keys from '../git_ignore_folder/keys.js';
 
@@ -18,7 +21,9 @@ class App extends React.Component {
       currentVideoChannelTitle: DefaultSearchData[0].snippet.channelTitle,
       currentVideoChannelDescription: DefaultSearchData[0].snippet.description,
       currentSearchInput: '',
-      allVideoData: DefaultSearchData
+      allVideoData: DefaultSearchData,
+      listedSearches: AllowedSearches,
+      parentAccessOn: false,
     };
   }
 
@@ -32,16 +37,32 @@ class App extends React.Component {
     this.serverSearchFn();
   }
 
+  useSearchTopicButtonFn(inputProp) {
+    this.serverSearchFn(inputProp);
+  }
+
   enterMakesSearchHappenFn(e) {
     if (e.keyCode === 13) {
       this.serverSearchFn();
     }
   }
 
-  serverSearchFn() {
+  toggleParentalAccessFn() {
+    if (this.state.parentAccessOn === false) {
+      var roll = Math.floor(Math.random() * VerificationQuestions.length);
+      var parentCheck = prompt(VerificationQuestions[roll][0]);
+      if (parentCheck === VerificationQuestions[roll][1]) {
+        this.setState({parentAccessOn: !this.state.parentAccessOn});  
+      }
+    } else {
+      this.setState({parentAccessOn: false});
+    }
+  }
+
+  serverSearchFn(stringToSearch = this.state.currentSearchInput) {
     var contextHere = this;
     axios.post('/search', {
-      searchString: contextHere.state.currentSearchInput
+      searchString: stringToSearch
     })
     .then(function (response) {
       console.log('SERVER RESPONSE TO FRONT END = ', response.data);
@@ -74,6 +95,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
+      <div className="flex-container-spaced app-header">
+        <h1 className="app-header__title-style">Parent's Choice Tube</h1>
+        <button className="app-header__parental-access-button" onClick={this.toggleParentalAccessFn.bind(this)}>Parental Access</button>
+      </div>
         <div>
           <SearchBar 
             currentSearchFn={this.currentSearchInputFn.bind(this)}
@@ -96,11 +121,15 @@ class App extends React.Component {
           </div>
         </div>
         <div>
-          <SearchOptions />
+          <SearchOptions 
+            useSearchTopicButton={this.useSearchTopicButtonFn.bind(this)}
+            allPossibleSearches={this.state.listedSearches}
+          />
         </div>
         <div>
           <UserLogin />
         </div>
+          <Timer />
       </div>
     );
   }

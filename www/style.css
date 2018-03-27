@@ -17,44 +17,87 @@
   
 }
 
-/*OVERALL APP ELEMENT CONTAIERS*/
+/*OVERALL APP ELEMENT CONTAINERS & APPLICATION HEADER*/
 .all-video--general-container {
   border: 3px solid black;
+  
+
+}
+
+.app-header {
+  margin-top: 20px;
+}
+
+.app-header__title-style {
+  color: pink;
+  font-size: 4em;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Indie Flower', cursive;
+  /*REMOVING WHITE SPACE*/
+  line-height: 1.2em;
+  height: 1.21em;
+}
+
+.app-header__parental-access-button {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5em;
+  border: 3px solid grey;
+  border-radius: 15px;
+  background: linear-gradient(blue, blue, white);
+  color: white;
+  width: 175px;
+  height: 75px;
+}
+
+.app-header__parental-access-button:hover {
+  background: blue;
 }
 
 /*SEARCH BAR*/
 .search-bar-container {
-  margin: 10px;
+  margin: 5px 10px 10px 10px;
 }
 
 /*CURRENT VIDEO*/
 .You-Tube-display {
-  border: 3px solid black;
-  padding: 20px;
+  border: 3px solid red;
+  padding: 5px 20px 20px 20px;
+  margin: 20px 25px;
   /*max-width: 75%;*/
 }
 
 .You-Tube-display--title-text {
   font-size: 1.25em;
+  padding: 0px 0px 10px 0px;
   color: blue;
+  font-family: 'Inder', sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 /*VIDEO LIST AND ITEMS*/
 .listed-videos {
-  width: 500px;
+  width: 600px;
   height: 80%;
+  padding: 15px 20px;
   overflow-y: auto;
 }
 
 
 .listed-videos__item {
-  margin: 10px;
+  margin: 5px;
   border: 1px solid black;
+  font-family: 'Inder', sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .listed-videos__item--images {
-  height: '90px',
-  width: '120px',
+  height: '90px';
+  width: '120px';
+  padding: 10px;
+  /*display: inline-block;*/
 }
 
 .listed-videos__item--title {
@@ -64,12 +107,32 @@
 
 .listed-videos__item--content-wrapper {
   margin: 10px;
+  background-color: green
 }
 
-.listed-videos__item--content-wrapper > p {
+.listed-videos__item--text-content {
   padding: 10px;
 }
 
+/*SEARCH FUNCTIONALITY*/
+.standard-button-container {
+  padding: 10px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.search-select-buttons {
+  height: 150px;
+  width: 150px;
+  border: 10px solid yellow;
+  border-radius: 50%;
+  margin: 0px 10px;
+  font-family: 'Inder', sans-serif;
+  /*OVERRIDDEN WITH ININE COLOR TO ROTATE WITH IMAGE SELECTED*/
+  color: white;
+  font-size: 1.25em;
+  background-size: contain;
+}
 
 
 

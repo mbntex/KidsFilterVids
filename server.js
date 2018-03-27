@@ -25,7 +25,7 @@ app.use(webpackDevMiddleware(compiler, {
   historyApiFallback: true,
 }));
 
-
+// VIDEO KEYWORD SEARCH
 app.post('/search', function (req, res) {
   // console.log('REQ TO THE SERVER = ', req.body);
   axios.get('https://www.googleapis.com/youtube/v3/search', {
@@ -35,12 +35,15 @@ app.post('/search', function (req, res) {
       key: keyObject.keys.YouTube_API_Key,
       videoEmbeddable: true,
       part: 'snippet',
-      type: 'video'
+      //part: 'snippet,contentDetails,statistics',
+      type: 'video',
+      /*SAFE SEARCH PARAM DO NOT DELETE*/
+      safeSearch: 'strict'
     }
   })
   .then(function (response) {
     // console.log('RES123456 = ', response.data);
-    console.log('RES123456 = ', response.data.items);
+    console.log('RES1234566743 = ', response.data.items);
     // var infoToWrite = JSON.stringify(response.data.items);
     // //DEFAULT DATA CREATOR FN : BE SURE TO NAME VAR DefaultSearchData & REAPPLY EXPORT DEFAULT WITH EACH USE
     // fs.writeFile('./src/components/DefaultSearchData.js', infoToWrite, (err) => {
@@ -53,6 +56,8 @@ app.post('/search', function (req, res) {
     res.send('SERVER YOUTUBE AXIOS ERROR = ', error);
   });
 })
+
+
 
  
 const server = app.listen(3000, function() {
