@@ -2,12 +2,13 @@ import React from 'react';
 import DeleteButtonsPopUp from './DeleteButtonsPopUp.jsx';
 
 
+
 var AddButton = (props) => {
   var lableInputTextColor ='black';
   var fileInputTextColor = 'black';
   (props.AddButtonLabel.length > 12) ? lableInputTextColor = 'red' : lableInputTextColor = 'black';
   (props.AddButtonFile.split('')[0] !== '.' || props.AddButtonFile.split('')[1] !== '/') ? fileInputTextColor = 'red' : fileInputTextColor = 'black';
-
+   
   return (
     <div className="flex-container-vertical-spaced add-button-controls">
       <div>Add Your Own Button</div>
@@ -19,7 +20,7 @@ var AddButton = (props) => {
             id="newButtonSearchTerm" 
             onChange={props.buttonFieldUpdater}
             value={props.AddButtonTerm}
-          >
+          > 
           </input>
         </span>
       </div>

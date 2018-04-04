@@ -13,7 +13,7 @@ var SearchBar = (props) => (
       </input>
       <button className="search-bar-input-button" onClick={props.activateSearchFn}>SEARCH</button>
     </div>
-  </div>
+  </div> 
 )
 
 

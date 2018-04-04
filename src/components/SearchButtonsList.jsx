@@ -10,7 +10,7 @@ class SearchButtonsList extends React.Component {
       showRightArrow: true
     }
   } 
-
+   
 
   determineIfArrowsShow(e) {
     // console.log(window.innerWidth);

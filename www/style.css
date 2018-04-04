@@ -1,6 +1,5 @@
 .app-wrapper {
   display: flex;
-  /*flex-wrap: wrap;*/
 }
 
 .flex-container {
@@ -13,7 +12,7 @@
   flex-direction: row;
   align-items: center; 
 }
-
+    
 .flex-container-spaced {
   display: flex;
   justify-content: space-between;

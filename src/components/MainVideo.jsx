@@ -9,15 +9,7 @@ var MainVideo = (props) => {
     playerVars: {rel: 0}
   };
 
-  // if (window.innerWidth < 1400) {
-  //   opts = {
-  //     height: '390',
-  //     width: '640',
-  //     playerVars: {rel: 0}
-  //   };
-  // }
   
-  // console.log('PLAYER STATE = ', YouTube.PlayerState)
 
   return(
     <div className="You-Tube-display">

@@ -14,7 +14,7 @@ var SpecificSearchTopicButtons = (props) => (
   </div>
 )
 
-
+ 
 {/*
 <img className="about-image" src="./images/donovonjenson.jpg"/>
 <img className="test1234" src="./ButtonImages/Daniel.jpeg"/>
