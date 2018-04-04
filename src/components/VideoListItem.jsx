@@ -11,9 +11,7 @@ class VideoListItem extends React.Component {
   
 
   render() {
-    // console.log('CONTENT RATING INFO = ', this.props.specificInfo.snippet.contentRating);
-    // console.log('CONTENT DETAILS =', this.props.specificInfo.contentDetails);
-    
+    if (!this.props.specificInfo.snippet.description) { var replacementDescription = "No Description Is Available"}
     return (
       <div className="listed-videos__item" onClick={()=>(this.props.pickVideoFn(this.props.specificInfo))}>
         <div className="listed-videos__item--title">
@@ -24,11 +22,11 @@ class VideoListItem extends React.Component {
             <img src={this.props.specificInfo.snippet.thumbnails.default.url}></img>
           </div>
           <div className="listed-videos__item--text-content">
-            {this.props.specificInfo.snippet.description}
+            {this.props.specificInfo.snippet.description || replacementDescription}
           </div>
         </div>
           <div className="listed-videos__item--text-content">
-            Channel: {this.props.specificInfo.snippet.channelTitle}
+            { /*Channel: {this.props.specificInfo.snippet.channelTitle} */ }
           </div>    
       </div>
     )

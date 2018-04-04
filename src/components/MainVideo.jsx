@@ -2,14 +2,22 @@ import React from 'react';
 import YouTube from 'react-youtube'; 
 
 var MainVideo = (props) => { 
+
   var opts = {
-    // height: '390',
-    // width: '640',
-    height: '450',
-    width: '738',
+    height: '548',
+    width: '900',
     playerVars: {rel: 0}
   };
-  console.log('PLAYER STATE = ', YouTube.PlayerState)
+
+  // if (window.innerWidth < 1400) {
+  //   opts = {
+  //     height: '390',
+  //     width: '640',
+  //     playerVars: {rel: 0}
+  //   };
+  // }
+  
+  // console.log('PLAYER STATE = ', YouTube.PlayerState)
 
   return(
     <div className="You-Tube-display">

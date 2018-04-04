@@ -1,15 +1,15 @@
 import React from 'react';
 
-var SearchTopicButton = (props) => (
+var SpecificSearchTopicButtons = (props) => (
   <div>
     <button 
       className="search-select-buttons" 
       style={{backgroundImage: `url(./ButtonImages/${props.buttonInfo.image})`, color: `${props.buttonInfo.color}`}} 
       id={props.buttonInfo.term} 
       onClick={()=>props.topicButtonClick(props.buttonInfo.term)}
-      >
+    >
         {props.buttonInfo.buttonLabel}
-      </button>
+    </button>
     
   </div>
 )
@@ -21,4 +21,4 @@ var SearchTopicButton = (props) => (
 style={{backgroundImage: './ButtonImages/Daniel.jpeg'}}
 */}
 
-export default SearchTopicButton;
+export default SpecificSearchTopicButtons;

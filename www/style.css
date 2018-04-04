@@ -1,27 +1,50 @@
+.app-wrapper {
+  display: flex;
+  /*flex-wrap: wrap;*/
+}
+
 .flex-container {
   display: flex;
+  flex-direction: row; 
+}
+
+.flex-container-align-center {
+  display: flex;
   flex-direction: row;
-  
+  align-items: center; 
 }
 
 .flex-container-spaced {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  
 }
 
 .flex-container-vertical {
   display: flex;
+  flex-direction: column;  
+}
+
+.flex-container-vertical-centered {
+  display: flex;
   flex-direction: column;
-  
+  align-items: center;  
+}
+
+.flex-container-vertical-centered > input {
+  text-align: center;
+}
+
+
+.flex-container-vertical-spaced {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
 }
 
 /*OVERALL APP ELEMENT CONTAINERS & APPLICATION HEADER*/
 .all-video--general-container {
-  border: 3px solid black;
-  
-
+  /*border: 3px solid black;*/
 }
 
 .app-header {
@@ -29,9 +52,9 @@
 }
 
 .app-header__title-style {
-  color: pink;
+  color: red;
   font-size: 4em;
-  margin: 0px;
+  margin: 0px 0px 0px 30px;
   padding: 0px;
   font-family: 'Indie Flower', cursive;
   /*REMOVING WHITE SPACE*/
@@ -40,28 +63,26 @@
 }
 
 .app-header__parental-access-button {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Inder', sans-serif;
+  width: 500px;
+  margin-right: 20px;
   font-size: 1.5em;
-  border: 3px solid grey;
+  border: 3px solid yellow;
   border-radius: 15px;
-  background: linear-gradient(blue, blue, white);
+  /*background: linear-gradient(blue, blue, blue, white);*/
+  background-color: blue;
   color: white;
-  width: 175px;
+  /*width: 175px;*/
   height: 75px;
 }
 
-.app-header__parental-access-button:hover {
-  background: blue;
-}
 
-/*SEARCH BAR*/
-.search-bar-container {
-  margin: 5px 10px 10px 10px;
-}
+
+
 
 /*CURRENT VIDEO*/
 .You-Tube-display {
-  border: 3px solid red;
+  /*border: 3px solid red;*/
   padding: 5px 20px 20px 20px;
   margin: 20px 25px;
   /*max-width: 75%;*/
@@ -72,53 +93,116 @@
   padding: 0px 0px 10px 0px;
   color: blue;
   font-family: 'Inder', sans-serif;
-  font-size: 1.2em;
+  font-size: 1.45em;
   font-weight: bold;
 }
 
 /*VIDEO LIST AND ITEMS*/
 .listed-videos {
-  width: 600px;
-  height: 80%;
-  padding: 15px 20px;
+  /*border: 3px solid green;*/
+  margin-top: 55px;
+  /*margin: 20px 25px;*/
+  padding: 0px 20px 20px 20px;
+  width: 500px;
+  height: 530px;
   overflow-y: auto;
 }
-
 
 .listed-videos__item {
   margin: 5px;
   border: 1px solid black;
+  border-radius: 15px;
   font-family: 'Inder', sans-serif;
   font-size: 1.2em;
   font-weight: bold;
 }
 
-.listed-videos__item--images {
-  height: '90px';
-  width: '120px';
-  padding: 10px;
+.listed-videos__item--images >img {
+  height: 120px;
+  width: 160px;
+  margin-top: 15px;
+  padding: 0px;
+  border: 3px solid black;
+  border-radius: 10px;
   /*display: inline-block;*/
 }
 
 .listed-videos__item--title {
   color: blue;
-  padding: 5px;
+  padding: 15px 15px 0px 15px;
 }
 
 .listed-videos__item--content-wrapper {
   margin: 10px;
-  background-color: green
+  /*background-color: green;*/
 }
 
 .listed-videos__item--text-content {
+  font-size: 0.85em;
   padding: 10px;
+  max-width: 80%;
 }
 
-/*SEARCH FUNCTIONALITY*/
+
+/*SEARCH FUNCTIONALITY & BUTTONS*/
+.overall-search-wrapper {
+  margin: 0px 20px 0px 20px;
+}
+
 .standard-button-container {
-  padding: 10px;
-  width: 100%;
+  margin: 20px 0px 20px 0px;
+  /*padding: 10px;*/
+  /*width: 100% -10px; why was this working?*/
+  width: 99%;
   overflow-x: auto;
+}
+
+.search-scroll-arrow {
+  height: 75px;
+  width: 75px;
+  margin: 10px;
+}
+
+
+
+
+
+
+
+
+
+.standard-button-container--arrows-left {
+  /*width: 75px;*/
+  /*margin:10px;*/
+}
+
+.standard-button-container--arrows-right {
+  /*width: 75px;*/
+  /*margin:10px;*/
+}
+
+.buttons-and-arrows {
+  /*display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: purple;*/
+}
+
+.arrow-left {
+  /*height: 60px;
+  width: 60px;*/
+  /*margin: 30px;*/
+}
+
+.arrow-right {
+  /*height: 60px;
+  width: 60px;*/
+  /*margin: 0px;*/
+}
+
+
+.standard-button-container::-webkit-scrollbar {
+  display: none;
 }
 
 .search-select-buttons {
@@ -136,8 +220,314 @@
 
 
 
+/*PARENTAL CONTROLS SECTION*/
+.parental-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  padding: 10px;
+  border: 5px solid red;
+  border-radius: 20px;
+  margin: 15px;
+
+  font-family: 'Inder', sans-serif;
+  font-size: 1.25em;
+  color: red;
+}
+
+.parental-controls__close-button {
+  position: relative;
+  float: right;
+}
+
+.parental-controls__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;;
+  min-width: 150px;
+  margin: 5px 15px;
+}
+
+/*PARENTAL TIMER CONTROLS*/
+.timer-control-interface {
+  margin: 5px 10px 10px 10px;
+}
+
+.timer-control-interface--title {
+
+}
+
+.timer-control-interface--hours {
+
+}
+
+.timer-control-interface--minutes {
+
+}
+
+.timer-control-interface--seconds {
+
+}
+
+.set-timer-button {
+  border: 3px solid yellow;
+  border-radius: 15px;
+  background-color: blue;
+  color: white;
+  font-family: 'Inder', sans-serif;
+  font-size: 1.25em;
+  height: 80px;
+  width: 120px;
+}
+
+.start-timer-button {
+  border: 3px solid yellow;
+  border-radius: 15px;
+  background-color: blue;
+  color: white;
+  font-family: 'Inder', sans-serif;
+  font-size: 1.25em;
+  height: 80px;
+  width: 120px;
+}
+
+.stop-timer-button {
+  border: 3px solid yellow;
+  border-radius: 15px;
+  background-color: blue;
+  color: white;
+  font-family: 'Inder', sans-serif;
+  font-size: 1.25em;
+  height: 80px;
+  width: 120px;
+}
+
+/*TIMER STLE*/
+.timer {
+  min-width: 450px;
+}
+
+:root {
+  /* :root is a clever way of saying "the outer-most element" */
+  
+  --bar-color: red; /* the default */
+}
+
+
+.timer-bar {
+  height: 60px;
+  width: 100%;
+  background-color: var(--bar-color);
+  /*background: linear-gradient(to left, red , white, white);*/
+}
 
 
 
+/*PARENTAL SEARCH BAR*/
+.search-bar-container {
+  margin: 5px 10px 0px 10px;
+}
+
+.search-bar-container__title {
+
+}
+
+.search-bar-input-button {
+  border: 3px solid yellow;
+  border-radius: 15px;
+  background-color: blue;
+  color: white;
+  font-family: 'Inder', sans-serif;
+  font-size: 1.25em;
+  height: 80px;
+  width: 120px;
+}
+
+#currentSearchInput {
+  min-width: 300px;
+  height: 80px;
+  font-family: 'Inder', sans-serif;
+  font-size: 1.25em;
+}
+
+.add-button-controls {
+  margin: 5px 10px 10px 10px;  
+}
+
+.add-button-controls-float-left {
+  float: left;
+}
+
+.add-button-controls-float-right {
+  float: right;
+}
+
+.add-button-controls-clear-both {
+  clear: both;
+}
+
+.add-button-note-text {
+  font-size: 0.6em;
+}
+
+.add-new-button {
+  border: 3px solid yellow;
+  border-radius: 15px;
+  background-color: blue;
+  color: white;
+  font-family: 'Inder', sans-serif;
+  font-size: 0.75em;
+  height: 60px;
+  width: 120px;
+  margin: 5px 0px 0px 5px;
+}
+
+.restore-button {
+  border: 3px solid yellow;
+  border-radius: 15px;
+  background-color: blue;
+  color: white;
+  font-family: 'Inder', sans-serif;
+  font-size: 0.5em;
+  height: 60px;
+  width: 60px;
+  margin: 5px 0px 0px 5px;
+  position: relative;
+  float: right;
+  top: 177px;
+  right: -25px;
+
+}
+
+.add-btn-inuput {
+  width: 250px;
+  margin-top: 5px;
+}
+
+/*ALWAYS VISIBLE TIMER*/
+.visible-timer {
+  font-family: 'Inder', sans-serif;
+  font-size: 1.5em;
+  color: red;
+}
+
+
+.visible-timer__unit {
+  margin: 15px 10px;
+}
+
+
+
+
+
+
+/*POP UP STYLE*/
+/*TIMER ADJUST POP UP*/
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0,0,0, 0.5);
+}
+
+.popup_inner {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  margin: auto;
+  background: white;
+}
+
+.timer-adjuster{
+  font-family: 'Inder', sans-serif;
+  font-size: 1.5em;
+  color: red;
+}
+
+.timer-adjuster__text {
+  margin-right: 10px;
+}
+
+.timer-adjuster__buttons {
+
+}
+
+.timer-adjuster__input {
+  border-radius: 10px;
+  font-family: 'Inder', sans-serif;
+  font-size: 1.5em;
+  color: red;
+  max-width: 100px;
+}
+
+
+/*BUTTON DEETE POP UP*/
+.button-delete-popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0,0,0, 0.5);
+}
+
+.button-delete-popup_inner {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  margin: auto;
+  background: white;
+}
+
+
+/*NO VIDEO POP UP*/
+/*BUTTON DEETE POP UP*/
+.button-no-video-popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0,0,0, 0.5);
+}
+
+.button-no-video-popup_inner {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 25%;
+  bottom: 25%;
+  margin: auto;
+  background: white;
+}
+
+
+
+
+button:hover {
+  background-color: #0D4161;
+  transition: background-color 0.5s ease;
+}
+
+button:active {
+  background-color: red;
+  transition: background-color 0.5s ease;
+}
 
 
