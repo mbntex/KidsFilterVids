@@ -8,5 +8,5 @@ var VerificationQuestions = [
   ['Just enter the numbers in: 4hel98lo', '498']
 ];
 
- 
+
 export default VerificationQuestions;

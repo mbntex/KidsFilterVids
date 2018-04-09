@@ -14,12 +14,12 @@ class Timer extends React.Component {
   } 
 
   componentWillMount() {
-    this.sortHMSFn(this.props.currentSecondsLeft);
+    this.sortHMSFn(this.props.timerSecondsLeft);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.currentSecondsLeft !== this.props.currentSecondsLeft) {
-      this.sortHMSFn(nextProps.currentSecondsLeft);
+    if (nextProps.timerSecondsLeft !== this.props.timerSecondsLeft) {
+      this.sortHMSFn(nextProps.timerSecondsLeft);
       // console.log('CHANGED!!!');
     } 
   }
@@ -32,10 +32,10 @@ class Timer extends React.Component {
         total.timerShownHours ++;
         if (num > 3600) { return tally(num) }
       }
-      if (num > 60) {
+      if (num > 59) {
         num -= 60;
         total.timerShownMinutes ++;
-        if (num > 60) { return tally(num) }
+        if (num > 59) { return tally(num) }
       }
       if (num >= 0) {
         total.timerShownSeconds = num;
@@ -48,20 +48,29 @@ class Timer extends React.Component {
   };
   
 
-
+// timerStartTimeThisRun = {this.state.timerStartTimeThisRun}
+//                 timerSecondsLeft = {this.state.timerSecondsLeft}
 
   render() {
+    var visibleTimerTextColor = 'red';
+    var visibleTimerTextStyle = {color: 'red'};
+    // (this.props.isTimerOn) ? visibleTimerTextColor = 'red' : visibleTimerTextColor = 'white'
+    ((this.props.timerSecondsLeft / this.props.timerStartTimeThisRun) > 0.7) ? visibleTimerTextStyle = {color: 'white', textShadow: '2px 2px #000000'} : visibleTimerTextStyle = {color: 'red', textShadow: '0px 0px #000000'}
     return(
       <div className="flex-container-vertical-spaced visible-timer">
-        <div className="flex-container">
+      { (this.props.isTimerOn) ? 
+        <div className="flex-container" style={visibleTimerTextStyle}>
           <div className="visible-timer__unit">HOURS: {this.state.timerShownHours}</div>
           <div className="visible-timer__unit">MINUTES: {this.state.timerShownMinutes}</div>
           <div className="visible-timer__unit">SECONDS: {this.state.timerShownSeconds}</div>
+        </div> : 
+        <div className="flex-container">
+          <div className="visible-timer__unit" style={{color: 'green'}}>TIMER IS OFF</div>
         </div>
+      }
       </div>
     )
   }
-
 }
 
 

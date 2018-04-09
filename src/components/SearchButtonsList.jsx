@@ -10,7 +10,7 @@ class SearchButtonsList extends React.Component {
       showRightArrow: true
     }
   } 
-   
+
 
   determineIfArrowsShow(e) {
     // console.log(window.innerWidth);
@@ -48,7 +48,7 @@ class SearchButtonsList extends React.Component {
         <div className="flex-container-align-center overall-search-wrapper">
           { (this.state.showLeftArrow) ? <div><img className="search-scroll-arrow" src="./ButtonImages/left.jpg"/></div> : <div className="search-scroll-arrow"></div> }
           <div className="flex-container standard-button-container" onScroll={this.determineIfArrowsShow.bind(this)} id="test6789">
-            {this.props.allPossibleSearches.map ((item, i) => <SpecificSearchTopicButtons buttonInfo={item} key={i} topicButtonClick={this.props.useSearchTopicButton}/> )}
+            {this.props.allPossibleSearches.map ((item, i) => <SpecificSearchTopicButtons buttonInfo={item} key={i} topicButtonClick={this.props.useSearchTopicButton} ActiveButtonSelectorFn={this.props.ActiveButtonSelectorFn} activeSearchForButtonActivation={this.props.activeSearchForButtonActivation}/> )}
           </div>
           { (this.state.showRightArrow) ? <div><img className="search-scroll-arrow" src="./ButtonImages/right.jpg"/></div> : <div className="search-scroll-arrow"></div> }
         </div>

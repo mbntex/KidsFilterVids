@@ -1,7 +1,7 @@
 import React from 'react';
 import TimerPopUp from '../components/TimerPopUp.jsx';
 
-
+ 
 class AdjustTimer extends React.Component {
   constructor (props) {
     super(props);
@@ -20,7 +20,6 @@ class AdjustTimer extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentSecondsLeft !== this.props.currentSecondsLeft) {
       this.sortHMSFn(nextProps.currentSecondsLeft);
-      // console.log('CHANGED!!!');
     } 
   }
 
@@ -60,19 +59,14 @@ class AdjustTimer extends React.Component {
 
   render() {
     return(
-      <div className="flex-container-vertical-spaced timer-control-interface">
-        <div className="timer-control-interface--title">SET, START, & STOP TIMER</div>
-        <div className="flex-container">
-          <div className="timer-control-interface--hours">HOURS: {this.state.timerShownHours}</div>
-          <div className="timer-control-interface--minutes">MINUTES: {this.state.timerShownMinutes}</div>
-          <div className="timer-control-interface--seconds">SECONDS: {this.state.timerShownSeconds}</div>
-        </div>
+      <div className="item-wrapper-internal">
         <div>
-        <button className="set-timer-button" onClick={this.combinedFuncitonsOnClick.bind(this)}>SET TIMER</button>
-          {(this.props.timerStatus)?
-            <button className="stop-timer-button" onClick={this.props.timerStopFn}>STOP TIMER</button> :
-            <button className="start-timer-button" onClick={this.props.timerStartFn}>START TIMER</button> 
-          }
+          DON'T FORGET TO START THE TIMER
+        </div>
+        <div className="flex-container-align-center-spaced parental-control__timer-visualizer">
+          <div>Hours: {this.state.timerShownHours}</div>
+          <div>Minutes: {this.state.timerShownMinutes}</div>
+          <div>Seconds: {this.state.timerShownSeconds}</div>
         </div>
         {this.state.setTimerPopUpShown ? 
         <div>
@@ -85,10 +79,21 @@ class AdjustTimer extends React.Component {
             subtractHoursFn={this.props.subtractHoursFn}
             info={this.state} 
             togglePopUp={this.toggleSetTimerPopUpFn.bind(this)} 
+            manualInputTimeHours={this.props.manualInputTimeHours}
+            updateCurrentTimerWithNewTime={this.props.updateCurrentTimerWithNewTime}
           />
         </div> : 
         <div>
         </div>}
+        <div className="parental-control__button-wrapper">
+          <button className="parental-control__button" onClick={this.combinedFuncitonsOnClick.bind(this)}>SET TIMER</button>
+          {(this.props.timerStatus)?
+            <button className="parental-control__button" onClick={this.props.timerStopFn}>STOP TIMER</button> :
+            <button className="parental-control__button" onClick={this.props.timerStartFn}>START TIMER</button> 
+          }
+          <button className="parental-control__button" onClick={this.props.quickSetTimerFn}>Quickset To 20 Min</button> 
+
+        </div>
       </div>
     )
   }
@@ -96,3 +101,5 @@ class AdjustTimer extends React.Component {
 }
 
 export default AdjustTimer;
+
+

@@ -10,6 +10,7 @@ var DeleteButtonSpecificButton = (props) => (
       >
         {props.buttonInfo.buttonLabel}
       </button>
+    
   </div>
 )
 

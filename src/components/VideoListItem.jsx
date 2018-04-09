@@ -8,12 +8,28 @@ class VideoListItem extends React.Component {
     };
   }
 
-  
+  // changeSelectedFn() {
+  //   this.setState({selected: !this.state.selected})
+  // }
+
+  // selectVideoWrapperFn() {
+  //   this.changeSelectedFn();
+  //   this.props.pickVideoFn(this.props.specificInfo);
+  // }
+
 
   render() {
     if (!this.props.specificInfo.snippet.description) { var replacementDescription = "No Description Is Available"}
+    var defaultStyle;
+    // if (this.state.selected === true) { border = {border: '5px solid red'} }
+    if (this.props.currentVideoPlaying === this.props.specificInfo.id.videoId) {
+      console.log('PLAYING = ', this.props.specificInfo.id.videoId);
+      defaultStyle = {border: '5px solid black', background: 'linear-gradient(to bottom, white, grey)'}
+    }
+
+
     return (
-      <div className="listed-videos__item" onClick={()=>(this.props.pickVideoFn(this.props.specificInfo))}>
+      <div className="listed-videos__item" style={defaultStyle} onClick={()=>this.props.pickVideoFn(this.props.specificInfo)}>
         <div className="listed-videos__item--title">
           {this.props.specificInfo.snippet.title}
         </div>

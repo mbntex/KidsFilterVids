@@ -4,8 +4,11 @@ var AllowedSearchesDefaults = [
   {term: 'Daniel Tiger\'s Neighborhood', buttonLabel: 'Daniel Tiger', image: 'Daniel.jpeg', category: 'family',  color: 'black' },
   {term: 'Mr. Wizard Science', buttonLabel: 'Mr. Wizard', image: 'Wizard.jpeg', category: 'educational',  color: 'white' },
   {term: 'Disney Frozen', buttonLabel: 'Frozen', image: 'Frozen.jpeg', category: 'Disney', color: 'white' },
-  {term: 'Sesame Street', buttonLabel: 'Sesame Street', image: 'Sesame.jpeg', category: 'family', color: 'black' },
-  {term: 'Muppets', buttonLabel: 'Muppets', image: 'Kermit.jpeg', category: 'family', color: 'black' },
+  {term: 'Sesame Street', buttonLabel: 'Sesame Street', image: 'Sesame.jpeg', category: 'family', color: 'white' },
+  {term: 'Sesame Street Alphabet', buttonLabel: 'Sesame Street Alphabet', image: 'letters.jpg', category: 'family', color: 'white' },
+  {term: 'Sesame Street Counting', buttonLabel: 'Counting', image: 'numberscount.jpg', category: 'educational', color: 'black' },
+  {term: 'Muppets', buttonLabel: 'Muppets', image: 'Kermit.jpeg', category: 'educational', color: 'black' },
+  {term: 'Bert & Ernie', buttonLabel: 'Sesame Street Bert & Ernie', image: 'be.jpeg', category: 'educational',  color: 'white' },
   {term: 'Reading Rainbow', buttonLabel: 'Reading Rainbow', image: 'ReadingRainbow.jpeg', category: 'educational',  color: 'black' },
   {term: 'Dora  The Explorer', buttonLabel: 'Dora', image: 'Dora.jpeg', category: 'educational',  color: 'black' },
   {term: 'Team Umizoomi', buttonLabel: 'Umizoomi', image: 'Umizoomi.jpeg',  category: 'educational', color: 'black' },
@@ -26,13 +29,12 @@ var AllowedSearchesDefaults = [
   {term: 'Kids Crafts', buttonLabel: 'Kids Crafts', image: 'KidsCrafts.jpg',  category: 'family', color: 'white' },
   {term: 'Crafts for Kids', buttonLabel: 'Crafts for Kids', image: 'workingcraft.jpg',  category: 'family', color: 'white' },
   {term: 'This Old House Home Improvement', buttonLabel: 'Construction', image: 'hammer.jpg',  category: 'family', color: 'black' },
-  {term: 'Good Bones home renovation', buttonLabel: 'Renovation', image: 'framing.jpg',  category: 'science', color: 'white' },
+  {term: 'Good Bones home renovation', buttonLabel: 'Home Renovation', image: 'framing.jpg',  category: 'science', color: 'white' },
   {term: 'Kids Science Experiments', buttonLabel: 'Kids Science Experiments', image: 'Stars.png',  category: 'family', color: 'nova' },
   {term: 'Nova Science', buttonLabel: 'Nova Science', image: 'testexp.jpg',  category: 'family', color: 'white' },
   {term: 'Whales', buttonLabel: 'Whales', image: 'whale.jpg',  category: 'science', color: 'white' },
-  {term: 'Bob Ross Painting', buttonLabel: 'Painting', image: 'painting.jpg',  category: 'science', color: 'white' },
-  {term: 'Good Bones home renovation', buttonLabel: 'home renovation', image: 'framing.jpg',  category: 'science', color: 'white' }
-]; 
+  {term: 'Bob Ross Painting', buttonLabel: 'Painting', image: 'painting.jpg',  category: 'science', color: 'white' }
+];  
 
 
 // export default AllowedSearchesDefaults;

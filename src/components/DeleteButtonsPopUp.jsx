@@ -13,7 +13,7 @@ var DeleteButtonsPopUp = (props) => (
     </div>
     </div>
   </div>
-) 
+)
 
 export default DeleteButtonsPopUp;
 
